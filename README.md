@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# MST Algorithm Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![MST Visualizer](https://img.shields.io/badge/MST-Visualizer-blue)
+![React](https://img.shields.io/badge/React-18.x-61DAFB)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC)
 
-## Available Scripts
+An interactive educational tool that visualizes Minimum Spanning Tree (MST) algorithms with step-by-step animation and data structure visualization.
 
-In the project directory, you can run:
+## 🔗 Live Demo
 
-### `npm start`
+Check out the live demo: [MST Visualizer](https://mst-visualizer-xavieragostinos-projects.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Interactive Graph Visualization
+- **Dynamic Graph Rendering:** Clear visualization of nodes and edges.
+- **Animated Algorithm Execution:** Watch algorithms work in real-time.
+- **Data Structure Visualization:** See exactly how each algorithm works:
+  - **Prim's:** Visualizes the visited set and Min-Heap priority queue.
+  - **Kruskal's:** Displays sorted edges and Union-Find components.
 
-### `npm test`
+### Multiple Algorithm Options
+- **Prim's Algorithm:** Grows a tree from a single starting vertex.
+- **Kruskal's Algorithm:** Sorts edges by weight and adds them if they don't create cycles.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Graph Creation Options
+- **Auto-Generate Mode:** Create random graphs with customizable parameters.
+  - Adjust node count.
+  - Control edge density.
+  - Set weight ranges.
+- **Manual Design Mode:** Build custom graphs from scratch with an intuitive interface.
+  - Add/remove nodes.
+  - Create/delete edges with custom weights.
+  - Design specific scenarios to test the algorithms.
 
-### `npm run build`
+### User Controls
+- **Step-by-Step Execution:** Move through each algorithm step manually.
+- **Animation Speed Control:** Adjust from slow to fast visualization.
+- **Show Answer:** Instantly display the complete MST solution.
+- **Detailed Explanations:** Each step is described in plain language for educational purposes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Educational Components
+- **Algorithm Reference:** View pseudocode for both algorithms.
+- **Color-Coded States:** Easily distinguish between:
+  - Unvisited edges
+  - Candidate edges being considered
+  - MST edges included in the solution
+  - Excluded edges that were rejected
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/mst-visualizer.git
+   cd mst-visualizer
+   ```
 
-### `npm run eject`
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Start the development server:**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Open your browser:** The application will be available at http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📖 How to Use
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Auto-Generate Mode
+1. Select **Auto-Generate** from the mode dropdown (this is the default).
+2. Adjust parameters:
+   - Number of nodes (3-10)
+   - Edge density (0.3-1.0)
+   - Weight range (1-99)
+3. Click **Generate New Graph**.
+4. Choose an algorithm: Prim's or Kruskal's.
+5. Use the control buttons:
+   - **Start**: Begin automated animation.
+   - **Step**: Advance the algorithm one step at a time.
+   - **Reset**: Clear progress and return the graph to its initial state.
+   - **Show**: Instantly display the final MST solution.
 
-## Learn More
+### Manual Design Mode
+1. Select **Manual Design** from the mode dropdown.
+2. Use the toolbar buttons:
+   - **Add Node**: Click this button, then click on the graph area to place a node.
+   - **Add Edge**: Click this button, then select two nodes to connect (you will be prompted for a weight).
+   - **Delete Node**: Click this button, then click on a node to remove it (and its connected edges).
+   - **Delete Edge**: Click this button, then click on an edge to remove it.
+3. Run algorithms on your custom graph using the same controls (Start, Step, Reset, Show).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
+- **React**: Frontend UI library.
+- **TailwindCSS**: Styling and responsive design.
+- **Lodash**: Utility functions.
+- **SVG**: For rendering graph elements.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Improvements
+- Add additional MST algorithms (e.g., Borůvka's algorithm).
+- Enable export/import of graph configurations.
+- Incorporate interactive tutorials.
+- Implement advanced graph layout algorithms for more complex graphs.
 
-### Code Splitting
+## 🤝 Contributing
+Contributions are welcome! To contribute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Fork the repository.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. Open a Pull Request and describe your changes.
 
-### Analyzing the Bundle Size
+## 📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with ❤️ by Xavier Agostino
