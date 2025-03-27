@@ -1,132 +1,133 @@
 # MST Algorithm Visualizer
 
-![MST Visualizer](https://img.shields.io/badge/MST-Visualizer-blue)
-![React](https://img.shields.io/badge/React-18.x-61DAFB)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38B2AC)
+An interactive web application for visualizing Minimum Spanning Tree (MST) algorithms in action. Built to make graph algorithms more accessible and easier to understand through visual representation.
 
-An interactive educational tool that visualizes Minimum Spanning Tree (MST) algorithms with step-by-step animation and data structure visualization.
+![MST Visualizer Screenshot](./screenshot.png)
 
-## 🔗 Live Demo
+**[🚀 Try it live: mst-visualizer-xavieragostinos-projects.vercel.app](https://mst-visualizer-xavieragostinos-projects.vercel.app/)**
 
-Check out the live demo: [MST Visualizer](https://mst-visualizer-xavieragostinos-projects.vercel.app/)
+## Motivation
 
-## ✨ Features
+While studying for Harvard's COMPSCI 1240 (Design and Analysis of Algorithms) Midterm, I found myself struggling to fully understand the nuances of minimum spanning tree algorithms by just reading textbooks or watching lecture videos. I searched for interactive tools that could help me visualize these algorithms step-by-step, but couldn't find any that matched what I needed.
 
-### Interactive Graph Visualization
-- **Dynamic Graph Rendering:** Clear visualization of nodes and edges.
-- **Animated Algorithm Execution:** Watch algorithms work in real-time.
-- **Data Structure Visualization:** See exactly how each algorithm works:
-  - **Prim's:** Visualizes the visited set and Min-Heap priority queue.
-  - **Kruskal's:** Displays sorted edges and Union-Find components.
+So I decided to build one myself! This project was born out of a genuine need to better understand these fundamental algorithms through visualization, and I'm sharing it in the hope that it can help other students facing similar challenges.
 
-### Multiple Algorithm Options
-- **Prim's Algorithm:** Grows a tree from a single starting vertex.
-- **Kruskal's Algorithm:** Sorts edges by weight and adds them if they don't create cycles.
+## Features
 
-### Graph Creation Options
-- **Auto-Generate Mode:** Create random graphs with customizable parameters.
-  - Adjust node count.
-  - Control edge density.
-  - Set weight ranges.
-- **Manual Design Mode:** Build custom graphs from scratch with an intuitive interface.
-  - Add/remove nodes.
-  - Create/delete edges with custom weights.
-  - Design specific scenarios to test the algorithms.
+- **Interactive Graph Visualization**: Clearly see how algorithms find minimum spanning trees
+- **Two Algorithm Implementations**:
+  - Prim's algorithm (grows a tree from a single starting vertex)
+  - Kruskal's algorithm (sorts edges by weight and adds them if they don't create cycles)
+- **Step-by-Step Execution**: Watch algorithms progress one step at a time with detailed explanations
+- **Dynamic Data Structure Visualization**: 
+  - For Prim's: See the visited set and Min-Heap priority queue update in real-time
+  - For Kruskal's: View sorted edges and Union-Find components as they evolve
+- **Graph Creation Options**:
+  - Auto-generate random graphs with configurable parameters
+  - Manual mode for creating custom graphs from scratch
+  - Control edge density, node count, and weight ranges
+- **Educational Features**:
+  - Algorithm reference guide with pseudocode
+  - Color-coded edges and nodes to indicate algorithm state
+  - Detailed explanations at each step
 
-### User Controls
-- **Step-by-Step Execution:** Move through each algorithm step manually.
-- **Animation Speed Control:** Adjust from slow to fast visualization.
-- **Show Answer:** Instantly display the complete MST solution.
-- **Detailed Explanations:** Each step is described in plain language for educational purposes.
+## Technologies Used
 
-### Educational Components
-- **Algorithm Reference:** View pseudocode for both algorithms.
-- **Color-Coded States:** Easily distinguish between:
-  - Unvisited edges
-  - Candidate edges being considered
-  - MST edges included in the solution
-  - Excluded edges that were rejected
+- React.js
+- Tailwind CSS
+- JavaScript (ES6+)
+- Lodash
 
-## 🚀 Installation
+## Installation and Usage
 
-1. **Clone the repository:**
+### Live Demo
+The easiest way to try the application is through the live demo:
+**[mst-visualizer-xavieragostinos-projects.vercel.app](https://mst-visualizer-xavieragostinos-projects.vercel.app/)**
+
+### Local Setup
+If you prefer to run the application locally:
+
+#### Prerequisites
+- Node.js (v14.0 or higher)
+- npm (v6.0 or higher)
+
+#### Setup
+1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/mst-visualizer.git
+   git clone https://github.com/xavieragostino/mst-visualizer.git
    cd mst-visualizer
    ```
 
-2. **Install dependencies:**
+2. Install dependencies
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
-3. **Start the development server:**
+3. Start the development server
    ```bash
    npm start
-   # or
-   yarn start
    ```
 
-4. **Open your browser:** The application will be available at http://localhost:3000.
+4. Open your browser and navigate to `http://localhost:3000`
 
-## 📖 How to Use
+### How to Use
 
-### Auto-Generate Mode
-1. Select **Auto-Generate** from the mode dropdown (this is the default).
-2. Adjust parameters:
-   - Number of nodes (3-10)
-   - Edge density (0.3-1.0)
-   - Weight range (1-99)
-3. Click **Generate New Graph**.
-4. Choose an algorithm: Prim's or Kruskal's.
-5. Use the control buttons:
-   - **Start**: Begin automated animation.
-   - **Step**: Advance the algorithm one step at a time.
-   - **Reset**: Clear progress and return the graph to its initial state.
-   - **Show**: Instantly display the final MST solution.
+1. **Select an Algorithm**: Choose between Prim's algorithm and Kruskal's algorithm
+2. **Set Up a Graph**: 
+   - Use auto-generate mode with custom parameters, or
+   - Switch to manual mode to create your own graph
+3. **Visualization Controls**:
+   - Start: Begin the animation
+   - Step: Move through the algorithm one step at a time
+   - Reset: Clear the current execution
+   - Show: Skip to the final MST result
+4. **Learn**: Read the explanations for each step and refer to the algorithm reference
 
-### Manual Design Mode
-1. Select **Manual Design** from the mode dropdown.
-2. Use the toolbar buttons:
-   - **Add Node**: Click this button, then click on the graph area to place a node.
-   - **Add Edge**: Click this button, then select two nodes to connect (you will be prompted for a weight).
-   - **Delete Node**: Click this button, then click on a node to remove it (and its connected edges).
-   - **Delete Edge**: Click this button, then click on an edge to remove it.
-3. Run algorithms on your custom graph using the same controls (Start, Step, Reset, Show).
+## Project Structure
 
-## Technologies Used
-- **React**: Frontend UI library.
-- **TailwindCSS**: Styling and responsive design.
-- **Lodash**: Utility functions.
-- **SVG**: For rendering graph elements.
+```
+src/
+├── components/
+│   └── MSTVisualizer/
+│       ├── MSTVisualizer.js     # Main component
+│       └── [Supporting files]   # Helper components and utilities
+└── App.js                     # Root component
+```
 
-## Future Improvements
-- Add additional MST algorithms (e.g., Borůvka's algorithm).
-- Enable export/import of graph configurations.
-- Incorporate interactive tutorials.
-- Implement advanced graph layout algorithms for more complex graphs.
+## Contributing
 
-## 🤝 Contributing
-Contributions are welcome! To contribute:
+I built this project as an educational tool, and I'd love for it to grow with contributions from the community. Whether you're fixing bugs, adding features, or improving documentation, all contributions are welcome!
 
-1. Fork the repository.
-2. Create your feature branch:
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m 'Add some amazing feature'
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. Open a Pull Request and describe your changes.
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Ideas for Contributions
+- Additional algorithms (Borůvka's algorithm)
+- Export/import of graph configurations
+- Interactive tutorials
+- Advanced graph layout algorithms for more complex graphs
+- Improved mobile responsiveness
+- Accessibility enhancements
 
-Built with ❤️ by Xavier Agostino
+## About Me
+
+I'm a junior at Harvard studying Computer Science with a passion for making complex topics more accessible through interactive tools. I believe visualization is a powerful way to understand algorithms and data structures, and I hope this project helps others in their learning journey.
+
+Feel free to reach out with questions, suggestions, or just to connect!
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Thanks to all the professors and TFs in Harvard's CS department who've helped deepen my understanding of algorithms
+- Inspired by various other algorithm visualization tools that have helped me learn
+- Built with React and Tailwind CSS
+
+---
+
+Happy learning! 🍎
